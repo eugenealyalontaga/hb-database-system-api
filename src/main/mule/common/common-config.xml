@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:apikit="http://www.mulesoft.org/schema/mule/mule-apikit" xmlns:http="http://www.mulesoft.org/schema/mule/http"
+	xmlns:secure-properties="http://www.mulesoft.org/schema/mule/secure-properties"
+	xmlns:db="http://www.mulesoft.org/schema/mule/db" xmlns="http://www.mulesoft.org/schema/mule/core" xmlns:doc="http://www.mulesoft.org/schema/mule/documentation" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+http://www.mulesoft.org/schema/mule/db http://www.mulesoft.org/schema/mule/db/current/mule-db.xsd
+http://www.mulesoft.org/schema/mule/secure-properties http://www.mulesoft.org/schema/mule/secure-properties/current/mule-secure-properties.xsd
+http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd
+http://www.mulesoft.org/schema/mule/mule-apikit http://www.mulesoft.org/schema/mule/mule-apikit/current/mule-apikit.xsd">
+	<db:config name="Database_Config" doc:name="Database Config" doc:id="83e13639-3853-4cb5-81f3-8a33da8e9281" >
+		<db:generic-connection url="${database.url}" driverClassName="${database.driver}" user="${database.user}" password="${secure::database.password}" />
+	</db:config>
+	<configuration-properties doc:name="Configuration properties" doc:id="d6cfcc97-e7fa-4725-b9ef-7ccdc815816f" file="config\config-${mule.env}.yaml" />
+	<secure-properties:config name="Secure_Properties_Config" doc:name="Secure Properties Config" doc:id="4c64b4fc-770f-4e3c-8c78-64a0a3b7c293" file="config\config-secured-${mule.env}.yaml" key="${secure.key}" />
+	<global-property doc:name="Global Property" doc:id="1572454b-e290-4506-9d78-732ba1123eff" name="mule.env" value="local" />
+	<global-property doc:name="Global Property" doc:id="e97f1177-a782-4459-9c67-92b92e9081de" name="secure.key" value="HeritageBookshop" />
+</mule>
