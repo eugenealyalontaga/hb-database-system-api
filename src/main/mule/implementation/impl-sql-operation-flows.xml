@@ -5,7 +5,7 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
 http://www.mulesoft.org/schema/mule/ee/core http://www.mulesoft.org/schema/mule/ee/core/current/mule-ee.xsd">
 	<sub-flow name="impl-sql-operation-flows-subflow" doc:id="94811142-9bd4-400e-9ebb-dac0f5bde118" >
-		<logger level="INFO" doc:name="START impl-sql-operation-flows" doc:id="32cc694d-eafc-4e52-8776-83b451fe2fa2" message="#[%dw 2.0&#10;output application/java&#10;---&#10;'START impl-sql-operation-flows ' ++&#10;'transactionId:' ++ correlationId ++&#10;' payload=' ++ write(payload, 'application/json')]"/>
+		<logger level="INFO" doc:name="START impl-sql-operation-flows-subflow" doc:id="32cc694d-eafc-4e52-8776-83b451fe2fa2" message="#[%dw 2.0&#10;output application/java&#10;---&#10;'START impl-sql-operation-flows-subflows ' ++&#10;'transactionId:' ++ correlationId ++&#10;' payload=' ++ write(payload, 'application/json')]"/>
 		<ee:transform doc:name="SQL Operation Request Payload" doc:id="f9005cc4-ab94-47db-aec6-482460812b2b" >
 			<ee:message >
 			</ee:message>
@@ -19,6 +19,6 @@ http://www.mulesoft.org/schema/mule/ee/core http://www.mulesoft.org/schema/mule/
 				<ee:set-payload resource="dwl/sql-operation/finalResponse.dwl" />
 			</ee:message>
 		</ee:transform>
-		<logger level="INFO" doc:name="END impl-sql-operation-flows" doc:id="0e369889-d356-44a3-8dd7-90aeea7b0247" message="#[%dw 2.0&#10;output application/java&#10;---&#10;'END impl-sql-operation-flows ' ++&#10;'transactionId:' ++ correlationId ++&#10;' payload=' ++ write(payload, 'application/json')]" />
+		<logger level="INFO" doc:name="END impl-sql-operation-flows-subflow" doc:id="0e369889-d356-44a3-8dd7-90aeea7b0247" message="#[%dw 2.0&#10;output application/java&#10;---&#10;'END impl-sql-operation-flows-subflow ' ++&#10;'transactionId:' ++ correlationId ++&#10;' payload=' ++ write(payload, 'application/json')]" />
 	</sub-flow>
 </mule>
