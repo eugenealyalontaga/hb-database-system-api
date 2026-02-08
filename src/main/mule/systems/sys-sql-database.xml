@@ -4,7 +4,7 @@
 	xmlns:doc="http://www.mulesoft.org/schema/mule/documentation"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
 http://www.mulesoft.org/schema/mule/db http://www.mulesoft.org/schema/mule/db/current/mule-db.xsd">
-	<sub-flow name="sys-sql-database" doc:id="df166224-7832-4b53-a3e0-3ca6e87ec688" >
+	<sub-flow name="sys-sql-database-subflow" doc:id="df166224-7832-4b53-a3e0-3ca6e87ec688" >
 		<logger level="INFO" doc:name="START sys-sql-database" doc:id="6ef311c0-3fab-444d-abb3-b83b411bb4f7" message="#[%dw 2.0&#10;output application/java&#10;---&#10;'START sys-sql-database ' ++&#10;'transactionId:' ++ correlationId ++&#10;' payload=' ++ write(payload, 'application/json')]"/>
 		<choice doc:name="Checks the SQL Operation" doc:id="48ab690a-c859-4209-8916-4a1249054ab0">
 			<when expression='#[payload.operation == "SELECT"]'>
