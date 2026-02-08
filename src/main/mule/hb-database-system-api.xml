@@ -18,7 +18,7 @@
         <error-handler ref="hb-database-system-api_APIKIT_Error_Handler" />
     </flow>
     <flow name="post:\sql-operation:application\json:Router">
-        <flow-ref doc:name="impl-sql-operation-flows" doc:id="27548ec5-1d19-4fe1-ad9b-f5ebc14e9b51" name="impl-sql-operation-flows"/>
+        <flow-ref doc:name="impl-sql-operation-flows" doc:id="27548ec5-1d19-4fe1-ad9b-f5ebc14e9b51" name="impl-sql-operation-flows-subflow"/>
 		<error-handler ref="hb-database-system-api_Global_Error_Handler" />
     </flow>
 </mule>

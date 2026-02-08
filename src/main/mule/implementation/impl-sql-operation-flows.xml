@@ -13,7 +13,7 @@ http://www.mulesoft.org/schema/mule/ee/core http://www.mulesoft.org/schema/mule/
 				<ee:set-variable resource="dwl/sql-operation/varDecryptedQuery.dwl" variableName="decryptedQuery" />
 			</ee:variables>
 		</ee:transform>
-		<flow-ref doc:name="sys-sql-database" doc:id="e8c3fbec-f09d-445e-b4c1-08a7baea4d61" name="sys-sql-database"/>
+		<flow-ref doc:name="sys-sql-database" doc:id="e8c3fbec-f09d-445e-b4c1-08a7baea4d61" name="sys-sql-database-subflow"/>
 		<ee:transform doc:name="SQL Operation Response Payload" doc:id="5627f640-a522-46eb-86d8-a0e555f024e1" >
 			<ee:message >
 				<ee:set-payload resource="dwl/sql-operation/finalResponse.dwl" />

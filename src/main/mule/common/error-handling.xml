@@ -23,7 +23,6 @@ output application/json skipNullOn = "everywhere"
 		status: '400',
 		errorType: 'APIKIT:BAD_REQUEST',
 		description: error.description,
-		detailedDescription: error.detailedDescription,
 		additionalDetails: error.errorMessage.payload,
 		timeStamp: now(),
 		transactionId: correlationId	
@@ -52,7 +51,6 @@ output application/json skipNullOn = "everywhere"
 		status: '502',
 		errorType: 'APIKIT_CONNECTIVITY',
 		description: error.description,
-		detailedDescription: error.detailedDescription,
 		additionalDetails: error.errorMessage.payload,
 		timeStamp: now(),
 		transactionId: correlationId		
@@ -81,7 +79,6 @@ output application/json skipNullOn = "everywhere"
 		status: '405',
 		errorType: 'APIKIT_METHOD_NOT_ALLOWED',
 		description: error.description,
-		detailedDescription: error.detailedDescription,
 		additionalDetails: error.errorMessage.payload,
 		timeStamp: now(),
 		transactionId: correlationId			
@@ -110,7 +107,6 @@ output application/json skipNullOn = "everywhere"
 		status: '406',
 		errorType: 'APIKIT_NOT_ACCEPTABLE',
 		description: error.description,
-		detailedDescription: error.detailedDescription,
 		additionalDetails: error.errorMessage.payload,
 		timeStamp: now(),
 		transactionId: vars.correlationHeader		
@@ -139,7 +135,6 @@ output application/json skipNullOn = "everywhere"
 		status: '404',
 		errorType: error.errorType.identifier,
 		description: error.description,
-		detailedDescription: error.detailedDescription,
 		additionalDetails: error.errorMessage.payload,
 		timeStamp: now(),
 		transactionId: correlationId	
@@ -167,7 +162,6 @@ output application/json skipNullOn = "everywhere"
 		status: '503',
 		errorType: 'APIKIT_NOT_IMPLEMENTED',
 		description: error.description,
-		detailedDescription: error.detailedDescription,
 		additionalDetails: error.errorMessage.payload,
 		timeStamp: now(),
 		transactionId: correlationId		
@@ -195,7 +189,6 @@ output application/json skipNullOn = "everywhere"
 		status: '415',
 		errorType: 'APIKIT:UNSUPPORTED_MEDIA_TYPE',
 		description: error.description,
-		detailedDescription: error.detailedDescription,
 		additionalDetails: error.errorMessage.payload,
 		timeStamp: now(),
 		transactionId: correlationId		
@@ -225,7 +218,6 @@ output application/json skipNullOn = "everywhere"
 		status: '400',
 		errorType: error.errorType.identifier,
 		description: error.description,
-		detailedDescription: error.detailedDescription,
 		additionalDetails: error.errorMessage.payload,
 		timeStamp: now(),
 		transactionId: correlationId
@@ -253,7 +245,6 @@ output application/json skipNullOn = "everywhere"
 		status: '500',
 		errorType: error.errorType.identifier,
 		description: error.description,
-		detailedDescription: error.detailedDescription,
 		additionalDetails: error.errorMessage.payload,
 		timeStamp: now(),
 		transactionId: correlationId
@@ -281,7 +272,6 @@ output application/json skipNullOn = "everywhere"
 		status: '404',
 		errorType: error.errorType.identifier,
 		description: error.description,
-		detailedDescription: error.detailedDescription,
 		additionalDetails: error.errorMessage.payload,
 		timeStamp: now(),
 		transactionId: correlationId
@@ -309,7 +299,6 @@ output application/json skipNullOn = "everywhere"
 		status: '408',
 		errorType: error.errorType.identifier,
 		description: error.description,
-		detailedDescription: error.detailedDescription,
 		additionalDetails: error.errorMessage.payload,
 		timeStamp: now(),
 		transactionId: correlationId
@@ -337,7 +326,6 @@ output application/json skipNullOn = "everywhere"
 		status: '401',
 		errorType: error.errorType.identifier,
 		description: error.description,
-		detailedDescription: error.detailedDescription,
 		additionalDetails: error.errorMessage.payload,
 		timeStamp: now(),
 		transactionId: correlationId
@@ -365,7 +353,6 @@ output application/json skipNullOn = "everywhere"
 		status: '500',
 		errorType: error.errorType.identifier,
 		description: error.description,
-		detailedDescription: error.detailedDescription,
 		additionalDetails: error.errorMessage.payload,
 		timeStamp: now(),
 		transactionId: correlationId
