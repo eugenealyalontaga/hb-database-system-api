@@ -6,14 +6,14 @@
 http://www.mulesoft.org/schema/mule/db http://www.mulesoft.org/schema/mule/db/current/mule-db.xsd">
 	<sub-flow name="sys-sql-database" doc:id="df166224-7832-4b53-a3e0-3ca6e87ec688" >
 		<logger level="INFO" doc:name="START sys-sql-database" doc:id="6ef311c0-3fab-444d-abb3-b83b411bb4f7" message="#[%dw 2.0&#10;output application/java&#10;---&#10;'START sys-sql-database ' ++&#10;'transactionId:' ++ correlationId ++&#10;' payload=' ++ write(payload, 'application/json')]"/>
-		<choice doc:name="Choice" doc:id="48ab690a-c859-4209-8916-4a1249054ab0">
+		<choice doc:name="Checks the SQL Operation" doc:id="48ab690a-c859-4209-8916-4a1249054ab0">
 			<when expression='#[payload.operation == "SELECT"]'>
-				<db:select doc:name="Select" doc:id="cf4deaed-b4f1-4819-bf21-c19b0dcc5f04" config-ref="Database_Config">
+				<db:select doc:name="SELECT Operation to DB" doc:id="cf4deaed-b4f1-4819-bf21-c19b0dcc5f04" config-ref="Database_Config">
 					<db:sql ><![CDATA[#[vars.decryptedQuery]]]></db:sql>
 				</db:select>
 			</when>
 			<otherwise>
-				<db:insert doc:name="Insert" doc:id="34d2eebb-65f2-4734-af2f-c1aaad20e78b" config-ref="Database_Config">
+				<db:insert doc:name="INSERT Operation to DB" doc:id="34d2eebb-65f2-4734-af2f-c1aaad20e78b" config-ref="Database_Config">
 					<db:sql ><![CDATA[#[vars.decryptedQuery]]]></db:sql>
 				</db:insert>
 			</otherwise>
